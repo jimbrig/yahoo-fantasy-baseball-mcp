@@ -1,0 +1,26 @@
+{
+  "name": "yahoo-fantasy-baseball-mcp",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "get-token": "node build/get-token.js",
+    "dev": "tsc && node build/index.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/dotenv": "^6.1.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.2",
+    "axios": "^1.9.0",
+    "dotenv": "^16.4.1",
+    "oauth-1.0a": "^2.2.6"
+  }
+}

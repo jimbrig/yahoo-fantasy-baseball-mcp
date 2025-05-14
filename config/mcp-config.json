@@ -1,0 +1,15 @@
+{
+  "yahoo-fantasy-baseball": {
+    "autoApprove": [],
+    "disabled": false,
+    "timeout": 60,
+    "command": "node",
+    "args": ["./build/index.js"],
+    "env": {
+      "YAHOO_CLIENT_ID": "replace_with_your_client_id",
+      "YAHOO_CLIENT_SECRET": "replace_with_your_client_secret",
+      "YAHOO_ACCESS_TOKEN": "replace_with_your_access_token"
+    },
+    "transportType": "stdio"
+  }
+}
