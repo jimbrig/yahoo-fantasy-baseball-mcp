@@ -38,16 +38,24 @@ This MCP server provides tools to interact with the Yahoo Fantasy Sports API, sp
 
 ### Obtaining Yahoo API Access
 
+> **Note**: The Yahoo Fantasy Sports API uses OAuth for authentication. The provided token script may need to be updated if the Yahoo API endpoints have changed.
+
 1. Visit the [Yahoo Developer Network](https://developer.yahoo.com/)
-2. Create a new project/application
+2. Create a new project/application with Fantasy Sports API access
 3. Make note of your Client ID and Client Secret
-4. Run the authentication script to get an access token:
+4. Add these values to your `.env` file:
    ```
-   npm run build
-   npm run get-token
+   YAHOO_CLIENT_ID=your_client_id
+   YAHOO_CLIENT_SECRET=your_client_secret
    ```
-5. Follow the instructions from the console to authorize the application
-6. Add the resulting access token to your `.env` file
+5. To get an access token, you may need to:
+   - Use the Yahoo Developer Console to generate a token
+   - Use a tool like Postman with OAuth 1.0a support
+   - Follow Yahoo's official documentation for the latest OAuth workflow
+6. Once obtained, add the access token to your `.env` file:
+   ```
+   YAHOO_ACCESS_TOKEN=your_access_token
+   ```
 
 ### Building and Running the Server
 
