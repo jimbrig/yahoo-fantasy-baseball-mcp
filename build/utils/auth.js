@@ -51,7 +51,7 @@ export function getOAuthHeaders(method, url, consumerKey, consumerSecret, access
     // Create signature base string
     const signatureBaseString = [
         method.toUpperCase(),
-        encodeURIComponent(baseUrl),
+        encodeURIComponent(baseUrl || ''),
         encodeURIComponent(paramString)
     ].join('&');
     // Create signing key
@@ -60,7 +60,7 @@ export function getOAuthHeaders(method, url, consumerKey, consumerSecret, access
         const tokenParts = accessToken.split('&');
         for (const part of tokenParts) {
             const keyValue = part.split('=');
-            if (keyValue.length === 2 && keyValue[0] === 'oauth_token_secret') {
+            if (keyValue.length === 2 && keyValue[0] === 'oauth_token_secret' && keyValue[1]) {
                 tokenSecret = keyValue[1];
                 break;
             }

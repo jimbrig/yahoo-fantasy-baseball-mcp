@@ -7,9 +7,9 @@ import { config } from 'dotenv';
 import { getOAuthHeaders } from './utils/auth.js';
 // Load environment variables
 config();
-const YAHOO_CLIENT_ID = process.env.YAHOO_CLIENT_ID;
-const YAHOO_CLIENT_SECRET = process.env.YAHOO_CLIENT_SECRET;
-const YAHOO_ACCESS_TOKEN = process.env.YAHOO_ACCESS_TOKEN;
+const YAHOO_CLIENT_ID = process.env.YAHOO_CLIENT_ID || '';
+const YAHOO_CLIENT_SECRET = process.env.YAHOO_CLIENT_SECRET || '';
+const YAHOO_ACCESS_TOKEN = process.env.YAHOO_ACCESS_TOKEN || '';
 if (!YAHOO_CLIENT_ID || !YAHOO_CLIENT_SECRET) {
     throw new Error('Yahoo API credentials are required in environment variables');
 }
